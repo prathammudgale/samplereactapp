@@ -1,13 +1,29 @@
-# React + Vite
+React App -  CI/CD Pipeline Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The project demonstartes how to dockerize a react application and CI/CD pipeline using github actions
 
-Currently, two official plugins are available:
+Step by step Explanation:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Cloned the React app 
+  given public repo: https://github.com/prathammudgale/samplereactapp.git
 
-## Expanding the ESLint configuration
+2. Created a New Git Branch - assessments 
+  I created a new branch called assessments 
+  git checkout -b assessments
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# samplereactapp
+3. Dockerizing the Application 
+  I added docker file to the root directory which:
+      Runs npm install and run npm build
+       Uses serve to host the static build
+       Exposes port 3000 so it is accessible in the browser
+
+4. Setting up Github Actions CI/CD
+    I created github actions which:
+     Triggers on every push/pull request to assessment branch
+     Install dependencies
+     Builds the Docker Image
+     Build the react app
+
+5. Published my changes
+
+6. Created a Pull request 
